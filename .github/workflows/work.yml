@@ -136,7 +136,7 @@ jobs:
             安装到EMMC及在线更新：系统-->晶晨宝盒
             
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.3.3
+      uses: dev-drprasad/delete-older-releases@v0.3.4
       if: env.PACKAGED_STATUS == 'success'
       with:
         keep_latest: 10
