@@ -41,3 +41,4 @@ downloadSpecificDir 'https://github.com/o0HalfLife0o/openwrt-ipk.git' 'master' '
 #git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/lean/luci-app-smartdns
 #Add luci-app-adguardhome
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/lean/luci-app-adguardhome
+#sed -i '/packages/s#coolsnowwolf#o0HalfLife0o#' feeds.conf.default
