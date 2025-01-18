@@ -124,7 +124,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: env.PACKAGED_STATUS == 'success'
       with:
-        tag: OpenWrt_s905d_${{ env.PACKAGED_OUTPUTDATE }}
+        tag: OpenWrt_s905d_R$(date +%y).${{ env.PACKAGED_OUTPUTDATE }}
         name: N1-OpenWrt | ${{ env.DATE }}
         allowUpdates: true
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
