@@ -67,7 +67,7 @@ jobs:
         useVersionInfo=$(git show -s --date=short --format="date: %cd<br/>commit: %s<br/>commit hash: %H")
         echo "useVersionInfo=$useVersionInfo" >> $GITHUB_ENV
         echo "DATE=$(date "+%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
-        echo "tag_name=$(date +%Y%m%d)" >> $GITHUB_ENV
+        echo "tag_name=$(date +%y.%m.%d.%H%M)" >> $GITHUB_ENV
 
     - name: Load custom feeds
       run: |
@@ -124,7 +124,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: env.PACKAGED_STATUS == 'success'
       with:
-        tag: OpenWrt_s905d_R$(date +%y).${{ env.PACKAGED_OUTPUTDATE }}
+        tag: OpenWrt_s905d_${{ env.tag_name }}
         name: N1-OpenWrt | ${{ env.DATE }}
         allowUpdates: true
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
